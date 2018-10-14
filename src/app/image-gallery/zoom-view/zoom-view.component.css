@@ -1,0 +1,21 @@
+.zoom-view {
+    position: absolute;
+    height: 75%;
+    width: 95%;
+    background-color: black;
+}
+.btn-delete {
+    width: 95%;
+    position: absolute;
+    z-index: 1;
+    padding: 1%;
+}
+.btn-delete button {
+    background-color: #d84343;
+    color: white;
+}
+
+.img-responsive {
+    height: -webkit-fill-available; 
+    width: -webkit-fill-available;
+}

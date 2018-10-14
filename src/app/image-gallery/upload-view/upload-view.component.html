@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div ngfDrop multiple="1" selectable="1" 
+    [(validDrag)]="validComboDrag" 
+    [(files)]="files" accept="image/*" 
+    [maxSize]="maxSize"
+    class="d-inline-flex p-2" 
+    [class.invalid-drag]="validComboDrag===false" 
+    [class.valid-drag]="validComboDrag">
+    <img class="img-responsive" src="http://ajaxuploader.com/images/drag-drop-file-upload.png">
+  </div>
+</div>
+
+
+<div *ngIf="files.length" class="row d-flex justify-content-center">
+    <button class="btn btn-primary btn-lg" (click)="addImagesToGallery()">Add Images To Gallery</button>
+</div>
+
+<div class="col-md-12 pad">
+  <div class="row">
+    <h5>{{ files.length }} Qued Files</h5>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let subArray of filesForView">
+      <div class="col-md-2" *ngFor="let item of subArray">
+        <div class="row">
+            <div class="previewIcon" [ngfBackground]="item"></div>
+        </div>
+        <div class="row name">
+          <strong>Name: </strong> {{ item.name }}
+        </div>
+        <div class="row">
+          <strong>Date: </strong> {{ item.lastModifiedDate | date: 'shortDate'}}
+        </div>
+        <div class="row">
+          <strong>Size: </strong>{{ item.size/1024/1024 | number:'.2' }} MB
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

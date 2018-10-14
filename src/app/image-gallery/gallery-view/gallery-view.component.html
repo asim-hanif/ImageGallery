@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="row">
+    <ng-container *ngFor="let subArray of filesForView">
+      <div class="col-md-2" *ngFor="let img of subArray">
+        <a [routerLink]="['/ZoomView', img.id]" class="thumbnail">
+          <img style="max-height:200px" class="img-thumbnail" [src]="img.base64EncodedValue" alt="Another alt text">
+        </a>
+          <strong>Date: </strong> {{ img.createDate | date: 'shortDate'}}
+      </div>
+    </ng-container>
+  </div>
+  <div class="row">
+    <a *ngIf="filesForView.length == 0">
+      <img class="img-thumbnail" src="http://icoconvert.com/images/noimage2.png" alt="Another alt text">
+    </a>
+  </div>
+</div>

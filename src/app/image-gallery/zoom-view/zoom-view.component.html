@@ -1,0 +1,22 @@
+<div *ngIf="imageSrc"  class="row d-flex justify-content-end btn-delete">
+  <button type="button" (click)="deleteImage()" class="btn rounded-circle "><i class="fa fa-trash"></i>
+  </button>
+</div>
+<div class="zoom-view">
+  <div class="row" style="height: 100%;">
+    <div class="col-sm-2 col-md-1 col-lg-1 d-flex justify-content-center align-items-center">
+      <button [style.display]="this.imageId > 1 ? '' : 'none'" type="button" (click)="previousImage()" class="btn rounded-circle float-left"><i
+          class="fa fa-arrow-left"></i>
+      </button>
+    </div>
+    <div class="col-sm-8 col-md-10 col-lg-10 d-flex justify-content-center align-items-center">
+      <img *ngIf="imageSrc" class="img-responsive" [src]="imageSrc">
+      <img *ngIf="!imageSrc" class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKdXEvsKkE1EeFCRl3Oaa9iTZmnhR--Z5ImeawNLYlhcv9347l">
+    </div>
+    <div class="col-sm-2 col-md-1 col-lg-1 d-flex justify-content-center align-items-center">
+      <button [style.display]="this.imageId < this.imagesDb.maxId ? '' : 'none'" type="button" (click)="nextImage()"
+        class="btn rounded-circle float-right"><i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

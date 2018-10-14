@@ -1,0 +1,21 @@
+.invalid-drag {
+    border: dotted 3px red;
+}
+.valid-drag {
+    border: dotted 3px green;
+}
+html, body {
+    height: 100%;
+}
+.previewIcon{
+    width:100px;
+   height:100px;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.name {
+    word-break: break-all; 
+    max-width: 100px; 
+    max-height: 75px;
+    overflow: hidden;
+}
